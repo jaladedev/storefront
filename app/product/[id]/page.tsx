@@ -6,11 +6,12 @@ import { Navbar } from '@/components/sections/Navbar'
 import { Footer } from '@/components/sections/Footer'
 
 interface Props {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product = products.find(p => p.id === params.id)
+  const { id } = await params
+  const product = products.find(p => p.id === id)
   if (!product) return { title: 'Product Not Found' }
   return {
     title: product.name,
@@ -27,14 +28,15 @@ export function generateStaticParams() {
   return products.map(p => ({ id: p.id }))
 }
 
-export default function ProductPage({ params }: Props) {
-  const product = products.find(p => p.id === params.id)
+export default async function ProductPage({ params }: Props) {
+  const { id } = await params
+  const product = products.find(p => p.id === id)
   if (!product) notFound()
 
   return (
     <>
       <Navbar />
-      <ProductDetailsPage product={product!} />
+      <ProductDetailsPage product={product} />
       <Footer />
     </>
   )
