@@ -3,9 +3,9 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
-import { faqs } from '@/data'
+import type { FAQ } from '@/types'
 
-export function FAQSection() {
+export function FAQSection({ faqs }: { faqs: FAQ[] }) {
   const [openId, setOpenId] = useState<string | null>('f1')
 
   return (

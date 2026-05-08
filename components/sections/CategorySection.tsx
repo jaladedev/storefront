@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
-import { categories } from '@/data'
+import type { Category } from '@/types'
 
-export function CategorySection() {
+export function CategorySection({ categories }: { categories: Category[] }) {
   return (
     <section id="categories" className="section-padding bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

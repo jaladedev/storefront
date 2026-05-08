@@ -2,10 +2,12 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { products, categories } from '@/data'
+import type { Product, Category } from '@/types'
 import { ProductCard } from '@/components/products/ProductCard'
 
-export function FeaturedProducts() {
+interface Props { products: Product[]; categories: Category[] }
+
+export function FeaturedProducts({ products, categories }: Props) {
   const [activeCategory, setActiveCategory] = useState('all')
 
   const filtered = activeCategory === 'all'

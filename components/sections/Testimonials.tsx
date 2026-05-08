@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { Star, Quote } from 'lucide-react'
-import { testimonials } from '@/data'
+import type { Testimonial } from '@/types'
 
-export function Testimonials() {
+export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) {
   return (
     <section id="testimonials" className="section-padding bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
