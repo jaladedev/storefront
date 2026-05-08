@@ -4,6 +4,13 @@ import { storeConfig } from '@/config/store'
 import { FloatingWhatsAppButton } from '@/components/shared/FloatingWhatsAppButton'
 import { StickyMobileCTA } from '@/components/shared/StickyMobileCTA'
 import { PageLoader } from '@/components/shared/PageLoader'
+import { Great_Vibes } from 'next/font/google'
+
+const greatVibes = Great_Vibes({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-great-vibes',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         `}</style>
       </head>
-      <body className="font-body antialiased">
+      <body className={`${greatVibes.variable} font-body antialiased`}>
         <PageLoader minDuration={1800} />
         {children}
         <FloatingWhatsAppButton />

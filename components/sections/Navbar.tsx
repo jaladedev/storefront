@@ -38,8 +38,10 @@ export function Navbar() {
             <ShoppingBag className="w-4 h-4 text-white" />
           </div>
           <span
-            className="font-display font-bold text-xl text-gray-900"
-            style={{ fontFamily: 'var(--font-display)' }}
+            className={`font-display font-bold text-xl transition-colors duration-300 ${
+              scrolled ? 'text-gray-950' : 'text-white drop-shadow-md'
+            }`}
+            style={{ fontFamily: 'var(--font-display)', letterSpacing: '-0.01em' }}
           >
             {storeConfig.name}
           </span>

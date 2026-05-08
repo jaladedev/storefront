@@ -126,7 +126,15 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
           <p>© {year} {storeConfig.name}. All rights reserved.</p>
-          <p>Built with ❤️ for WhatsApp commerce</p>
+          <p className="flex items-center gap-2">
+            Built by{'     '}
+            <span
+              className="text-white text-base"
+              style={{ fontFamily: 'var(--font-great-vibes)' }}
+            >
+              jalade.dev
+            </span>
+          </p>
         </div>
       </div>
     </footer>
